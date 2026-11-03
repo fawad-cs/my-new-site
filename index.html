@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Weather-app</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: "Popins", sans-serif;
+            background: #222;
+        }
+        .card{
+            width: 90%;
+            max-width: 470px;
+            background: linear-gradient(135deg, #00feba, #5b548a);
+            margin: 100px auto 0;
+            padding: 40px 35px;
+            text-align: center;
+            border-radius: 20px;
+            color: #555;
+        }
+        .search{
+            width: 100%;
+            /* display: flex; */
+            align-items: center;
+            justify-content: center;
+        }
+        .search input{
+            border: 0;
+            outline: 0;
+            background: #ebfffc;
+            border-radius: 30px;
+            height: 60px;
+            padding: 10px 25px;
+            flex: 1;
+            margin-right: 16px;
+            font-size: 18px;
+        }
+        .search button{
+            border: 0;
+            outline: 0;
+            background: #ebfffc;
+            border-radius: 50%;
+            height: 60px;
+            width: 60px;
+            cursor: pointer;
+
+        }
+        .search button .icon-search{
+            font-size: 18px;
+        }
+        .weatherIcon{
+            width: 170px;
+            margin-top: 30px;
+           border-radius: 20px;
+
+        }
+        .weather h1{
+            font-size: 80px;
+            font-weight: 500;
+            color: #ebfffc;
+        }
+        .weather h2{
+            font-size: 45px;
+            font-weight: 400;
+            margin-top: 10px;
+            color: #ebfffc;
+        }
+        .deatils{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px;
+            margin-top: 50px;
+            gap: 60px;
+            color: #ebfffc;
+        }
+        .col .fa-solid{
+            font-size: 45px;
+            margin: 10px;
+        }
+        .col{
+            display: flex;
+            align-items: center;
+
+        }
+        .humidityIcon,
+         .windIcon{
+            font-size: 28px;
+        }
+        .weather{
+            display: none;
+        }
+        .error{
+            text-align: left;
+            margin-left: 29px;
+            font-size: 16px;
+            color: white;
+            margin-top: 15px;
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="card">
+        <div class="search">
+        <input type="name" placeholder="Enter the city name" spellcheck="false">
+        <button><svg class="icon-search" xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 1024 1024">
+	<path d="M0 0h1024v1024H0z" fill="none" />
+	<path fill="currentColor" d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1S492.1 112 412 112s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6M570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4" />
+</svg>
+</button>
+<div class="error">
+    <p>Invalid City name</p>
+</div>
+</div>
+<div class="weather">
+    <img src="images/weatherepng.png" class="weatherIcon" >
+    <h1 class="temp">22*c</h1>
+    <h2 class="city">Pakistan</h2>
+    <div class="deatils">
+        <div class="col">
+            <i class="humidityIcon fa-solid fa-droplet"></i>
+            <div class="perctange">
+            <p class="humdity">50%</p>
+            <p>Humidity</p>
+            </div>
+        </div>
+        <div class="col">
+            <i class="windIcon fa-solid fa-wind"></i>
+           <div class="perctange">
+             <p class="wind">15 km/h</p>
+            <p>Wind Speed</p>
+           </div>
+        </div>
+    </div>
+</div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
